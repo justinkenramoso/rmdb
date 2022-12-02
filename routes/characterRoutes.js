@@ -45,7 +45,7 @@ router.get("/all", async function (req, res) {
     res.render("characters", { response });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ msg: `Internal Server Error.` });
+    res.status(500).json({ msg: `Error: ${err}` });
   }
 });
 
