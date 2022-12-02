@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
-const port = 5600;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -19,6 +18,9 @@ const pageRoutes = require("./routes/pageRoutes");
 app.use("/", pageRoutes);
 const characterRoutes = require("./routes/characterRoutes");
 app.use("/characters", characterRoutes);
+
+require("dotenv").config();
+const port = process.env.PORT || 5600;
 
 app.listen(port, (err) => {
   if (err) {
