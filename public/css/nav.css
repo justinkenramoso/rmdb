@@ -1,0 +1,19 @@
+#nav {
+  background-color: #9cff2e !important;
+  position: fixed;
+  width: 100vw;
+  min-height: 10vh;
+  z-index: 1;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+#brand-img {
+  width: 40px;
+}
+#brand-img-2 {
+  width: 130px;
+}
+.nav-links-div {
+  font-family: "Alfa Slab One";
+  font-size: large;
+  font-weight: 100;
+}

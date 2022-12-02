@@ -1,0 +1,32 @@
+footer {
+  min-height: 40vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+footer > p > a {
+  color: #9cff2e;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+footer > p > a:hover {
+  color: #fdff00;
+}
+#my-links > a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: all 0.3s;
+}
+#my-links > a:hover {
+  color: #2192ff;
+}
+#footer-line {
+  height: 5px;
+  background-color: white;
+}

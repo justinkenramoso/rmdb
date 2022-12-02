@@ -1,0 +1,55 @@
+<!--Character Card-->
+<div class="col d-flex d-flex justify-content-center">
+  <div class="card mb-3 char-card">
+    <div class="row g-0 h-100">
+      <div class="col-12 px-3 py-2 d-sm-none">
+        <h5 class="card-title char-name">{{this.name}}</h5>
+      </div>
+      <div
+        class="col-6 col-sm-12 col-md-4 card-img-holder"
+        style="background-image: url({{this.image}});"
+      >
+      </div>
+      <div class="col-6 col-sm-12 col-md-8 card-body-column">
+        <div class="card-body">
+          <h5 class="card-title char-name d-none d-sm-block">{{this.name}}</h5>
+          <p class="card-text">
+            <div class="row">
+              <div class="col-md-6">
+                Status:
+                <strong class="{{this.statusColor}}">{{this.status}}
+                  <i class="fa-solid fa-circle fa-2xs"></i></strong>
+              </div>
+              <div class="col-md-6">
+                Gender:
+                <strong>{{this.gender}}</strong>
+              </div>
+              <div class="col-md-6">
+                Species:
+                <strong>{{this.species}}</strong>
+              </div>
+              <div class="col-md-6">
+                Type:
+                <strong>{{this.type}}</strong>
+              </div>
+              <div class="col-12 d-none d-md-block">
+                Origin:
+                <a
+                  class="card-link"
+                  href="{{this.origin.url}}"
+                >{{this.origin.name}}</a>
+              </div>
+              <div class="col-12 d-none d-md-block">
+                Location:
+                <a
+                  class="card-link"
+                  href="{{this.location.url}}"
+                >{{this.location.name}}</a>
+              </div>
+            </div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

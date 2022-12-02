@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  position: relative;
+}
+
+@font-face {
+  font-family: "rm";
+  src: url(../fonts/rm.ttf);
+}
