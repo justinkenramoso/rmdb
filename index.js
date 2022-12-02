@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
+const path = require("path");
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -12,6 +13,7 @@ app.use(express.json());
 // Template Engine
 app.engine("hbs", exphbs.engine({ extname: ".hbs" }));
 app.set("view engine", "hbs");
+app.set("views", path.join(__dirname, ".", "views"));
 
 // Routes
 const pageRoutes = require("./routes/pageRoutes");
