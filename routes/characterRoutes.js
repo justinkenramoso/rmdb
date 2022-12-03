@@ -125,11 +125,15 @@ router.get("/filter", async function (req, res) {
     if (response.results) {
       processResults(response.results);
     }
+    let pageCount = 0;
+    if (response.info) {
+      pageCount = response.info.pages;
+    }
     res.render("characters", {
       pagination: {
         page: parseInt(req.query.page),
-        limit: response.info.pages,
-        totalRows: response.info.pages * response.info.pages,
+        limit: pageCount,
+        totalRows: pageCount * pageCount,
       },
       response,
     });
