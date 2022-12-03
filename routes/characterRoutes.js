@@ -24,9 +24,38 @@ function processResults(results) {
   }
 }
 
+// Get Current Page
+// function getCurrentPage(info) {
+//   let prev = null;
+//   let next = null;
+//   if (info.prev) {
+//     const prevUrl = info.prev;
+//     const a = prevUrl.lastIndexOf("=");
+//     prev = parseInt(prevUrl.substring(a + 1));
+//   }
+//   if (info.next) {
+//     const nextUrl = info.next;
+//     const b = nextUrl.lastIndexOf("=");
+//     next = parseInt(nextUrl.substring(b + 1));
+//   }
+//   let currentPage = 0;
+//   if (!prev && !next) {
+//     currentPage = 1;
+//   } else if (!prev) {
+//     currentPage = next - 1;
+//   } else if (!next) {
+//     currentPage = prev + 1;
+//   } else {
+//     currentPage = next - 1;
+//   }
+//   return currentPage;
+// }
+
 // Get All Characters
 router.get("/all", async function (req, res) {
-  const url = "https://rickandmortyapi.com/api/character";
+  const requestedPage = req.query.page;
+  const url =
+    "https://rickandmortyapi.com/api/character/?page=" + requestedPage;
   const options = {
     method: "GET",
   };
@@ -42,7 +71,15 @@ router.get("/all", async function (req, res) {
     if (response.results) {
       processResults(response.results);
     }
-    res.render("characters", { response });
+    // const currentPage = getCurrentPage(response.info);
+    res.render("characters", {
+      pagination: {
+        page: parseInt(req.query.page),
+        limit: response.info.pages,
+        totalRows: response.info.pages * response.info.pages,
+      },
+      response,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json({ msg: `Error: ${err}` });
@@ -68,8 +105,11 @@ router.get("/filter", async function (req, res) {
     const gender = "gender=" + req.query.gender;
     filters.push(gender);
   }
+  const requestedPage = "page=" + req.query.page;
+  filters.push(requestedPage);
 
   const url = `https://rickandmortyapi.com/api/character/?${filters.join("&")}`;
+  console.log(url);
   const options = {
     method: "GET",
   };
@@ -85,7 +125,14 @@ router.get("/filter", async function (req, res) {
     if (response.results) {
       processResults(response.results);
     }
-    res.render("characters", { response });
+    res.render("characters", {
+      pagination: {
+        page: parseInt(req.query.page),
+        limit: response.info.pages,
+        totalRows: response.info.pages * response.info.pages,
+      },
+      response,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json({ msg: `Internal Server Error.` });

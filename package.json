@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devStart": "nodemon index.js"
+    "dev": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +18,8 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
+    "express-handlebars-paginate": "^1.0.3",
+    "handlebars-paginate": "^0.1.0",
     "node-fetch": "^3.3.0",
     "rickmortyapi": "^1.0.0"
   },

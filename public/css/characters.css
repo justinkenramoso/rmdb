@@ -62,6 +62,7 @@
   color: white;
   border: 1px solid #9cff2e;
   width: 100%;
+  cursor: pointer;
 }
 .char-name {
   font-family: "Alfa Slab One", sans-serif;

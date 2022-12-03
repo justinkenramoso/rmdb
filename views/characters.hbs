@@ -7,7 +7,7 @@
         <div id="char-nav">
             <form action="/characters/filter" method="GET" class="mt-2">
                 <h4 class="text-center">Filters 
-                    <a href="/characters/all">Reset <i class="bi bi-arrow-clockwise"></i></a> 
+                    <a href="/characters/all/?page=1">Reset <i class="bi bi-arrow-clockwise"></i></a> 
                     <a href="/characters/random">Random <i class="bi bi-shuffle"></i></a>
                 </h4>
                 <div class="row g-2 filters">
@@ -46,6 +46,7 @@
                     </select>
                     </div>
                     <div class="col-12 d-flex justify-content-end">
+                        <input class="d-none" type="number" name="page" id="page" value="1">
                         <button class="submit-filters" type="submit">Submit Filters</button>
                     </div>
                 </div>
@@ -53,13 +54,9 @@
                 <div class="text-center">
                 {{#if response.results}}
                 <h5>Found <span class="result-count">{{response.info.count}}</span> result(s)</h5>
+                <h5>Pages: <span class="result-count">{{response.info.pages}}</span></h5>
                     <h5>
-                        {{#if response.info.prev}}
-                            <a class="btn btn-light page-btn" onclick="movePage(this)" data-url="{{response.info.prev}}"><i class="bi bi-caret-left-fill"></i> Previous Page</a>
-                        {{/if}}
-                        {{#if response.info.next}}
-                            <a class="btn btn-light page-btn" onclick="movePage(this)" data-url="{{response.info.next}}">Next Page <i class="bi bi-caret-right-fill"></i></a>
-                        {{/if}}
+                        {{{paginate pagination paginationClass="pagination justify-content-center" leftText="Prev" rightText="Next"}}}
                     </h5>
                 {{/if}}
                 {{#unless response.results}}
@@ -77,7 +74,7 @@
             </form>
         </div>
     </div>
-    <div id="char-grid" class="row row-cols-1 row-cols-sm-2 row-cols-md-1 row-cols-lg-2 py-3 px-1 px-sm-5">
+    <div id="char-grid" class="row row-cols-1 row-cols-sm-2 row-cols-md-1 row-cols-lg-2 py-3 px-3 px-sm-5">
         {{#if response.results}}
             {{#each response.results}}
             {{> character-grid}}
@@ -95,12 +92,7 @@
                 {{#if response.results}}
                 <h5>Found <span class="result-count">{{response.info.count}}</span> result(s)</h5>
                     <h5 class="m-0 pb-5">
-                        {{#if response.info.prev}}
-                            <a class="btn btn-light page-btn" onclick="movePage(this)" data-url="{{response.info.prev}}">Previous Page</a>
-                        {{/if}}
-                        {{#if response.info.next}}
-                            <a class="btn btn-light page-btn" onclick="movePage(this)" data-url="{{response.info.next}}">Next Page <i class="bi bi-arrow-right-circle-fill"></i></a>
-                        {{/if}}
+                        {{{paginate pagination paginationClass="pagination justify-content-center" leftText="Prev" rightText="Next"}}}
                     </h5>
                 {{/if}}
                 {{#unless response.results}}

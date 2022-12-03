@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const exphbs = require("express-handlebars");
+const paginateHelper = require("express-handlebars-paginate");
 const bodyParser = require("body-parser");
 const path = require("path");
 
@@ -11,10 +12,19 @@ app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 
 // Template Engine
-app.engine("hbs", exphbs.engine({ extname: ".hbs" }));
+app.engine(
+  "hbs",
+  exphbs.engine({
+    extname: ".hbs",
+    helpers: {
+      paginate: paginateHelper.createPagination,
+    },
+  })
+);
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, ".", "views"));
-
+// Handlebars-Paginate
+console.log(paginateHelper.createPagination);
 // Routes
 const pageRoutes = require("./routes/pageRoutes");
 app.use("/", pageRoutes);
