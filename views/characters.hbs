@@ -56,7 +56,7 @@
                 <h5>Found <span class="result-count">{{response.info.count}}</span> result(s)</h5>
                 <h5>Pages: <span class="result-count">{{response.info.pages}}</span></h5>
                     <h5>
-                        {{{paginate pagination paginationClass="pagination justify-content-center" leftText="Prev" rightText="Next"}}}
+                        {{{paginate pagination paginationClass="pagination pagination-sm justify-content-center flex-wrap" leftText="Prev" rightText="Next"}}}
                     </h5>
                 {{/if}}
                 {{#unless response.results}}
@@ -92,7 +92,7 @@
                 {{#if response.results}}
                 <h5>Found <span class="result-count">{{response.info.count}}</span> result(s)</h5>
                     <h5 class="m-0 pb-5">
-                        {{{paginate pagination paginationClass="pagination justify-content-center" leftText="Prev" rightText="Next"}}}
+                        {{{paginate pagination paginationClass="pagination pagination-sm justify-content-center" leftText="Prev" rightText="Next"}}}
                     </h5>
                 {{/if}}
                 {{#unless response.results}}
