@@ -8,13 +8,13 @@ footer {
   align-items: center;
   padding-top: 20px;
 }
-footer > p > a {
+.api-link {
   color: #9cff2e;
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s;
 }
-footer > p > a:hover {
+.api-link:hover {
   color: #fdff00;
 }
 #my-links > a {
@@ -29,4 +29,15 @@ footer > p > a:hover {
 #footer-line {
   height: 5px;
   background-color: white;
+}
+.footer-name {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+.footer-name:hover {
+  color: white;
+  border-bottom: 2px solid #2192ff;
 }

@@ -19,29 +19,19 @@
   align-items: center;
   width: 100%;
 }
-#char-nav > form > h4 > a {
+.controls {
   color: #9cff2e;
   text-decoration: none;
   margin-left: 20px;
   transition: all 0.3s;
   font-size: large;
 }
-#char-nav > form > h4 > a:hover {
+.controls:hover {
   color: #fdff00;
 }
 .result-count {
   color: #fdff00;
   font-weight: bold;
-}
-#char-nav > a {
-  margin: 0 5px;
-  padding: 5px 20px;
-  background-color: #9cff2e;
-  border-radius: 10px;
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  font-size: large;
 }
 .filters {
   max-width: 400px;
