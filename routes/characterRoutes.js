@@ -1,6 +1,12 @@
-// importing packages
+// Imports
 const express = require("express");
 const router = express.Router();
+
+// Locals
+const locals = {
+  title: "Characters | RMDB",
+  characters: true,
+};
 
 // Fetch
 const fetch = (...args) =>
@@ -79,6 +85,7 @@ router.get("/all", async function (req, res) {
         totalRows: response.info.pages * response.info.pages,
       },
       response,
+      locals,
     });
   } catch (err) {
     console.log(err);
@@ -136,6 +143,7 @@ router.get("/filter", async function (req, res) {
         totalRows: pageCount * pageCount,
       },
       response,
+      title: "Characters | RMDB",
     });
   } catch (err) {
     console.log(err);
@@ -175,7 +183,7 @@ router.get("/random", async function (req, res) {
     if (response) {
       processResults(response);
     }
-    res.render("characters", { response });
+    res.render("characters", { response, title: "Characters | RMDB" });
   } catch (err) {
     console.log(err);
     res.status(500).json({ msg: `Internal Server Error.` });
@@ -202,7 +210,7 @@ router.get("/page", async function (req, res) {
     if (response.results) {
       processResults(response.results);
     }
-    res.render("characters", { response });
+    res.render("characters", { response, title: "Characters | RMDB" });
   } catch (err) {
     console.log(err);
     res.status(500).json({ msg: `Internal Server Error.` });

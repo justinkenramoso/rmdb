@@ -1,53 +1,14 @@
 <!--Character Card-->
-<div class="col d-flex d-flex justify-content-center">
-  <div class="card mb-3 char-card">
-    <div class="card-header char-name d-sm-none">
-      {{this.name}}
-    </div>
-    <div class="row g-0 h-100">
-      <div
-        class="col-6 col-sm-12 col-md-4 card-img-holder"
-        style="background-image: url({{this.image}});"
-      >
-      </div>
-      <div class="col-6 col-sm-12 col-md-8 card-body-column">
-        <div class="card-body">
-          <h5 class="card-title char-name d-none d-sm-block">{{this.name}}</h5>
-          <div class="row">
-            <div class="col-md-6">
-              Status:
-              <strong class="{{this.statusColor}}">{{this.status}}
-              </strong>
-            </div>
-            <div class="col-md-6">
-              Gender:
-              <strong>{{this.gender}}</strong>
-            </div>
-            <div class="col-md-6">
-              Species:
-              <strong>{{this.species}}</strong>
-            </div>
-            <div class="col-md-6">
-              Type:
-              <strong>{{this.type}}</strong>
-            </div>
-            <div class="col-12 d-none d-sm-block">
-              Origin:
-              <a
-                class="card-link"
-                href="{{this.origin.url}}"
-              >{{this.origin.name}}</a>
-            </div>
-            <div class="col-12 d-none d-sm-block">
-              Location:
-              <a
-                class="card-link"
-                href="{{this.location.url}}"
-              >{{this.location.name}}</a>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="col">
+  <div
+    class="card char-card zoom-on-hover"
+    style="max-width: 300px;"
+    data-bs-toggle="modal"
+    data-bs-target="#character{{this.id}}"
+  >
+    <img class="char-img" src="{{this.image}}" alt="" />
+    <div class="card-body m-0 p-0 text-center h-100">
+      <p class="char-name m-0 pb-1">{{this.name}}</p>
     </div>
   </div>
 </div>

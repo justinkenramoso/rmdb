@@ -27,7 +27,8 @@
       href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap"
       rel="stylesheet"
     />
-    <title>PlumbusPedia</title>
+    <title>{{locals.title}}</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   </head>
   <body>
     {{{body}}}
@@ -45,5 +46,17 @@
     ></script>
     <!--Custom JS-->
     <script src="/js/main.js"></script>
+  {{#if response.results}}
+      {{#each response.results}}
+        {{> character-modal}}
+      {{/each}}
+    {{/if}}
+    {{#unless response.results}}
+      {{#unless response.error}}
+        {{#each response}}
+          {{> character-modal}}
+        {{/each}}
+      {{/unless}}
+    {{/unless}}
   </body>
 </html>

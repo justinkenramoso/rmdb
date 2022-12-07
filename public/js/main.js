@@ -1,3 +1,7 @@
+// Fetch
+const fetch = (...args) =>
+  import("node-fetch").then(({ default: fetch }) => fetch(...args));
+
 function movePage(button) {
   const rawUri = button.getAttribute("data-url");
   const encodedUri = encodeURIComponent(rawUri);
@@ -37,3 +41,32 @@ if (currentUrl.includes("filter")) {
     links.item(i).href = newLink;
   }
 }
+
+// function getEpisodes(character) {
+//   const episodeLinks = character.getAttribute("data-episodes");
+//   const episodes = episodeLinks.split(",");
+//   const episodesArray = [];
+//   episodes.forEach((text) => {
+//     const x = text.lastIndexOf("/");
+//     const episodeNum = parseInt(text.substring(x + 1));
+//     episodesArray.push(episodeNum);
+//   });
+//   const url =
+//     "https://rickandmortyapi.com/api/episode/" + episodesArray.join(",");
+//   const options = {
+//     method: "GET",
+//   };
+//   // promise syntax
+//   fetch(url, options)
+//     .then((res) => res.json())
+//     .then((json) => console.log(json))
+//     .catch((err) => console.error("error:" + err));
+//   try {
+//     let response = fetch(url, options);
+//     response = response.json();
+//     alert(response);
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json({ msg: `Error: ${err}` });
+//   }
+// }

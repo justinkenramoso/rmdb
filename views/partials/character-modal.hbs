@@ -1,0 +1,75 @@
+<!--Modal-->
+<div class="modal fade" id="character{{this.id}}">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content char-card modal-card">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Character Info</h1>
+        <button
+          type="button"
+          class="btn-close text-bg-light"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-6 order-2 order-lg-1">
+            <h3 class="modal-char-name my-2">{{this.name}}</h3>
+            <div class="row">
+              <div class="col-6 text-end">
+                <h5>Status <i class="fa-solid fa-heart-pulse"></i> :</h5>
+              </div>
+              <div class="col-6 {{this.statusColor}}">
+                <h5>{{this.status}}</h5>
+              </div>
+              <div class="col-6 text-end">
+                <h5>Gender <i class="fa-solid fa-venus-mars"></i> :</h5>
+              </div>
+              <div class="col-6">
+                <h5>{{this.gender}}</h5>
+              </div>
+              <div class="col-6 text-end">
+                <h5>Species <i class="fa-solid fa-dna"></i> :</h5>
+              </div>
+              <div class="col-6">
+                <h5>{{this.species}}</h5>
+              </div>
+              <div class="col-6 text-end">
+                <h5>Type <i class="fa-solid fa-circle-question"></i> :</h5>
+              </div>
+              <div class="col-6">
+                <h5>{{this.type}}</h5>
+              </div>
+              <div class="col-6 text-end">
+                <h5>Origin <i class="fa-solid fa-earth-americas"></i> :</h5>
+              </div>
+              <div class="col-6">
+                <h5><a class="card-link">{{this.origin.name}}</a></h5>
+              </div>
+              <div class="col-6 text-end">
+                <h5>Location <i class="fa-solid fa-location-dot"></i> :</h5>
+              </div>
+              <div class="col-6">
+                <h5><a class="card-link">{{this.location.name}}</a></h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 order-0 order-lg-2">
+            <div
+              class="img-modal d-flex justify-content-center align-items-center h-100"
+            >
+              <img class="rounded" src="{{this.image}}" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >Close</button>
+      </div>
+    </div>
+  </div>
+</div>
