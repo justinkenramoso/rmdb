@@ -61,5 +61,8 @@
         {{/each}}
       {{/unless}}
     {{/unless}}
+    {{#if response.status}}
+        {{> one-char-modal}}
+    {{/if}}
   </body>
 </html>

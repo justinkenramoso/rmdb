@@ -1,0 +1,28 @@
+<!--Location Data-->
+<div class="text-center">
+  <h2 class="ls-name">{{locals.locationName}}</h2>
+  <h2 class="ls-data">Type: <span>{{locals.locationType}}</span></h2>
+  <h2 class="ls-data">Dimension:
+    <span>{{locals.locationDimension}}</span></h2>
+</div>
+
+<h3 class="residents-header">Residents: </h3>
+<div
+  class="m-auto pb-5 row row-cols-3 row-cols-md-4 row-cols-lg-5 g-3 g-md-4 g-lg-5"
+>
+  {{#unless response.status}}
+        {{#unless response.error}}
+          {{#each response}}
+              {{> character-grid}}
+          {{/each}}
+        {{/unless}}
+        
+    {{/unless}}
+    {{#if response.status}}
+        {{> one-char-card}}
+    {{/if}}
+</div>
+
+    {{#if response.error}}
+          <h3 class="no-residents">Nobody lives here <i class="fa-solid fa-heart-crack heart"></i></h3>
+    {{/if}}

@@ -1,7 +1,11 @@
 <div class="col">
   <div
-    class="card location-card"
+    class="card location-card zoom-on-hover"
     data-location-id="{{this.id}}"
+    data-location-name="{{this.name}}"
+    data-location-type="{{this.type}}"
+    data-location-dimension="{{this.dimension}}"
+    data-location-residents="{{this.residents}}"
     onclick="{displayLocation(this)}"
   >
     <div class="card-header location-header">

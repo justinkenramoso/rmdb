@@ -1,10 +1,26 @@
-// Fetch
-const fetch = (...args) =>
-  import("node-fetch").then(({ default: fetch }) => fetch(...args));
-
 function displayLocation(trigger) {
   const locationId = trigger.getAttribute("data-location-id");
+  const locationName = trigger.getAttribute("data-location-name");
+  const locationType = trigger.getAttribute("data-location-type");
+  const locationDimension = trigger.getAttribute("data-location-dimension");
+  const locationResidents = trigger.getAttribute("data-location-residents");
+  const residents = locationResidents.split(",");
+  const residentIDs = [];
+  residents.map((link) => {
+    const lastSlashIndex = link.lastIndexOf("/");
+    const residentID = parseInt(link.substring(lastSlashIndex + 1));
+    residentIDs.push(residentID);
+  });
+  window.location.href = `/locations/specify/?id=${locationId}&name=${locationName}&type=${locationType}&dimension=${locationDimension}&residents=${residentIDs}`;
 }
+
+// const episodeLinks = character.getAttribute("data-episodes");
+//     const episodes = episodeLinks.split(",");
+//     const episodesArray = [];
+//     episodes.forEach((text) => {
+//       const x = text.lastIndexOf("/");
+//       const episodeNum = parseInt(text.substring(x + 1));
+//       episodesArray.push(episodeNum);
 
 function toApi() {
   if (confirm("Leave site and go to rickandmortyapi.com?")) {
