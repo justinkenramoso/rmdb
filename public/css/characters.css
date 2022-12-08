@@ -8,10 +8,10 @@
   color: white;
   margin: 20px;
 }
-#char-header > h2 {
-  font-family: rm;
+.rm-header {
   font-size: 4em;
   color: #9cff2e;
+  text-align: center;
 }
 #char-nav {
   display: flex;
@@ -46,14 +46,6 @@
 }
 .submit-filters:hover {
   color: #38e54d;
-}
-.char-card {
-  background-color: #393e46;
-  color: white;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  transition: all 0.3s;
 }
 .card-body {
   border-bottom-left-radius: inherit;
@@ -97,6 +89,14 @@
 }
 
 /* Character Modal */
+.char-card {
+  background-color: #393e46;
+  color: white;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
 .modal-card {
   cursor: default;
   background-color: #393e46;

@@ -12,8 +12,16 @@
 #brand-img-2 {
   width: 130px;
 }
-.nav-links-div {
-  font-family: "Alfa Slab One";
-  font-size: large;
-  font-weight: 100;
+.link-nav {
+  font-size: larger;
+  color: black;
+  text-decoration: none;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  border-bottom: 0px solid transparent;
+}
+.link-nav:hover {
+  color: black;
+  border-bottom: 3px solid #2192ff;
 }

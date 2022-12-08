@@ -1,0 +1,21 @@
+#locations {
+  padding-top: 15vh;
+  min-height: 100vh;
+  margin: auto;
+  background-color: black;
+  padding-bottom: 30px;
+}
+.location-card {
+  background-color: #393e46;
+  cursor: pointer;
+  border: none;
+  color: white;
+  height: 100%;
+}
+.location-header {
+  background-color: #9cff2e;
+  text-align: center;
+  color: black;
+}
+.location-body {
+}

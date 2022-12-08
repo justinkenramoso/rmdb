@@ -1,0 +1,30 @@
+<div class="col">
+  <div
+    class="card location-card"
+    data-location-id="{{this.id}}"
+    onclick="{displayLocation(this)}"
+  >
+    <div class="card-header location-header">
+      {{this.name}}
+    </div>
+    <div class="card-body location-body">
+      <div class="row">
+        <div class="col-6 text-end">
+          Type
+          <i class="fa-solid fa-circle-question"></i>
+        </div>
+        <div class="col-6" style="color: #FDFF00">
+          {{this.type}}
+        </div>
+        <div class="col-6 text-end">
+          Dimension
+          <i class="fa-solid fa-atom"></i>
+        </div>
+        <div class="col-6" style="color: #38E54D">
+          {{this.dimension}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

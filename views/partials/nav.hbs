@@ -22,15 +22,15 @@
       class="collapse navbar-collapse nav-links-div"
       id="navbarSupportedContent"
     >
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto me-lg-5 mb-2 mb-lg-0">
         <li class="nav-item mx-2">
-          <a class="nav-link {{#if locals.characters}}active{{/if}}" href="/characters/all/?page=1">Characters</a>
+          <a class="link-nav {{#if locals.characters}}active-link{{/if}}" href="/characters/all/?page=1">Characters</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link {{#if locals.locations}}active{{/if}}" href="#">Locations</a>
+          <a class="link-nav {{#if locals.locations}}active-link{{/if}}" href="/locations/?page=1">Locations</a>
         </li>
         <li class="nav-item ms-2 me-5">
-          <a class="nav-link{{#if locals.episodes}}active{{/if}}" href="#">Episodes</a>
+          <a class="link-nav {{#if locals.episodes}}active-link{{/if}}" href="/episodes/?page=1">Episodes</a>
         </li>
       </ul>
     </div>

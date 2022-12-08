@@ -2,11 +2,8 @@
 const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
-function movePage(button) {
-  const rawUri = button.getAttribute("data-url");
-  const encodedUri = encodeURIComponent(rawUri);
-  const url = "/characters/page/?url=" + encodedUri;
-  window.location.href = url;
+function displayLocation(trigger) {
+  const locationId = trigger.getAttribute("data-location-id");
 }
 
 function toApi() {
@@ -43,13 +40,13 @@ if (currentUrl.includes("filter")) {
 }
 
 // function getEpisodes(character) {
-//   const episodeLinks = character.getAttribute("data-episodes");
-//   const episodes = episodeLinks.split(",");
-//   const episodesArray = [];
-//   episodes.forEach((text) => {
-//     const x = text.lastIndexOf("/");
-//     const episodeNum = parseInt(text.substring(x + 1));
-//     episodesArray.push(episodeNum);
+// const episodeLinks = character.getAttribute("data-episodes");
+// const episodes = episodeLinks.split(",");
+// const episodesArray = [];
+// episodes.forEach((text) => {
+//   const x = text.lastIndexOf("/");
+//   const episodeNum = parseInt(text.substring(x + 1));
+//   episodesArray.push(episodeNum);
 //   });
 //   const url =
 //     "https://rickandmortyapi.com/api/episode/" + episodesArray.join(",");
